@@ -2,6 +2,9 @@
 
 Benchmarking an IMU-based motion tracking system against a vision-based tracking system using a unified evaluation pipeline.
 
+
+All sensing systems (IMU, RGB-D camera, optical tracking) were integrated into a unified experimental setup with synchronized acquisition and standardized data logging across multiple machines.
+
 ---
 
 ## Overview
@@ -23,11 +26,16 @@ The goal is to evaluate how well low-cost tracking systems perform under realist
 ### IMU-based system
 BodyRig wearable tracking suit with 5 IMU sensors.
 
-<img src="figures/IMU.PNG" width="350">
+<img src="figures/IMU.PNG" width="400">
+
+The IMUs provide real-time orientation data, which drives a Unity avatar for visualization.
+
+<img src="figures/avatar.png" width="700">
 
 ### Vision-based system
 MediaPipe Pose + Intel RealSense D455.
-<img src="figures/camera.PNG" width="600">
+
+<img src="figures/camera.PNG" width="700">
 
 ### Ground truth
 HTC VIVE optical tracking system.
@@ -105,22 +113,24 @@ Example outputs include:
 
 - 3D trajectory comparison across systems  
 
-<img src="figures/accuracy.PNG" width="600">
+<img src="figures/accuracy.PNG" width="700">
 
 - Time-series tracking plots  
 - Accuracy comparison across tasks  
 - Frame rate stability plots  
 
-<img src="figures/bandwidth.png" width="600">
+<img src="figures/bandwidth.png" width="700">
 
 
 
 ## Key Contributions
 
-- A benchmarking framework for evaluating wearable and vision-based motion tracking systems  
-- A multimodal data alignment pipeline integrating IMU, vision, and optical tracking  
-- Quantitative evaluation across accuracy, latency, precision, and bandwidth  
-- Analysis of tracking performance under realistic perturbations  
+
+- Designed and implemented a modular benchmarking framework for cross-system evaluation of wearable and vision-based motion tracking systems
+- Integrated IMU, RGB-D, and optical tracking systems into a unified experimental platform with synchronized multi-machine acquisition and standardized data interfaces
+- Developed an automated evaluation pipeline for computing accuracy, repeatability, latency, and bandwidth metrics
+- Conducted robustness analysis under controlled perturbations including occlusion and electromagnetic interference
+
 
 
 ## Notes
