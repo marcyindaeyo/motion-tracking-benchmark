@@ -1,9 +1,15 @@
 # Motion Tracking Benchmark for Wearable and Vision Systems
 
-Benchmarking an IMU-based motion tracking system against a vision-based tracking system using a unified evaluation pipeline.
+A full-system validation framework for multi-sensor motion tracking, including synchronized acquisition, spatial alignment, automated evaluation, and stress testing.
 
+---
 
-All sensing systems (IMU, RGB-D camera, optical tracking) were integrated into a unified experimental setup with synchronized acquisition and standardized data logging across multiple machines.
+## Engineering Scope
+
+- Designed and owned a full validation lifecycle including test specification, automated execution, regression comparison, and performance reporting.
+- Defined quantitative acceptance criteria for multi-sensor tracking accuracy and latency under stressed conditions.
+- Built a reproducible benchmarking pipeline for cross-system performance evaluation.
+
 
 ---
 
@@ -42,29 +48,26 @@ HTC VIVE optical tracking system.
 
 ---
 
-## Experiment Design
 
-Participants (N=9) performed 10 upper-body tasks under normal and challenging conditions:
-- basic tasks: static hold, point-to-point, circle drawing, fast waving
-- applied tasks: bottle pick & place, USB insertion, simulated cutting
-- challenging: visual occlusion, electromagnetic interference (EMI). These perturbations allow evaluation of robustness in real-world scenarios. 
+## Benchmark Design
+
+- Participants (N=9) performed 10 standardized upper-body tasks derived from teleoperation use cases
+- Balanced ecological realism and cross-system comparability
+- Incorporated stress scenarios including visual occlusion and electromagnetic interference (EMI)
 
 
+<img src="figures/task.PNG" width="700">
 
-## Data Processing Pipeline
 
-<img src="figures/pipeline.png" width="700">
+## Data Processing & Alignment
 
-Key processing steps:
+<img src="figures/pipeline.png" width="750">
 
-**Time Synchronization**
-
-Data from multiple PCs were aligned using timestamp exchange and cross-correlation to ensure frame-level correspondence across systems. 
-
-**Spatial Alignment**
-
-All trajectories were transformed into a common coordinate frame.
-A Kabsch-based rigid transformation was used to align the coordinate systems of the IMU and camera outputs with the optical tracking reference. 
+- Developed calibration and coordinate alignment procedures across heterogeneous sensing modalities
+- Implemented cross-correlation based time synchronization
+- Applied Kabsch rigid-body alignment for spatial registration
+- Developed automated task segmentation and metric computation (Python + MATLAB)
+- Built batch evaluation scripts for reproducible analysis
 
 
 ---
@@ -125,11 +128,10 @@ Example outputs include:
 
 ## Key Contributions
 
-
-- Designed and implemented a modular benchmarking framework for cross-system evaluation of wearable and vision-based motion tracking systems
-- Integrated IMU, RGB-D, and optical tracking systems into a unified experimental platform with synchronized multi-machine acquisition and standardized data interfaces
-- Developed an automated evaluation pipeline for computing accuracy, repeatability, latency, and bandwidth metrics
-- Conducted robustness analysis under controlled perturbations including occlusion and electromagnetic interference
+- Designed and owned the complete benchmarking architecture
+- Led multi-sensor integration and experimental execution
+- Developed automated validation and regression evaluation framework
+- Delivered quantitative performance insights for wearable and vision-based tracking systems
 
 
 
