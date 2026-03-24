@@ -23,6 +23,8 @@ This project evaluates upper-body motion tracking using:
 
 The goal is to evaluate how well low-cost tracking systems perform under realistic movement conditions.
 
+<img src="figures/system.PNG" width="550">
+
 <img src="figures/setup.PNG" width="500">
 
 ---
@@ -45,6 +47,8 @@ MediaPipe Pose + Intel RealSense D455.
 
 ### Ground truth
 HTC VIVE optical tracking system.
+
+<img src="figures/VIVE.png" width="700">
 
 ---
 
